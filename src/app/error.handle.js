@@ -27,10 +27,16 @@ const errHandler = (err, ctx) => {
       message = "未携带token";
       status = 401;
       break;
+    case errorType.ACCOUNT_DOES_NOT_MATCH:
+      message = "您没有操作的权限";
+      status = 409;
+      break;
     default:
       message = "NOT FOUNT";
       status = 404;
   }
+  console.log(status)
+  console.log(message)
   ctx.response.status = status;
   ctx.response.body = message;
 };

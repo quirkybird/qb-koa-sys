@@ -27,6 +27,31 @@ class MomentController {
     const res = await momentService.getAllMoment(offset, size);
     // 返回数据
     ctx.response.body = res;
+  };
+
+  update = async (ctx, next) => {
+    // 获取momentId,要修改的内容
+    const momentId = ctx.request.params.momentId
+    const { content } = ctx.request.body
+    // 数据库update
+    const res = await momentService.updateMoment(momentId, content)
+    // 返回数据
+    ctx.response.body = {
+      momentId: momentId,
+      content: content,
+      info: res
+    }
+  };
+  remove = async (ctx, next) => {
+    // 获取momentId,要修改的内容
+    const momentId = ctx.request.params.momentId
+    // 数据库update
+    const res = await momentService.deleteMoment(momentId)
+    // 返回数据
+    ctx.response.body = {
+      momentId: momentId,
+      info: res
+    }
   }
 }
 

@@ -4,6 +4,7 @@ const USERNAME_NOT_EXIST = "username_not_exist"
 const USERNAME_OR_PASSWORD_IS_INCORRENT = "username_or_password_is_incorrent"
 const UNAUTHORIZATION = "unauthorization"
 const AUTHORIZATION_IS_NULL = "authorization_is_null"
+const ACCOUNT_DOES_NOT_MATCH = "account_does_not_match"
 
 module.exports = {
     USERNAME_OR_PASSWORD_IS_REQUIRE,
@@ -11,5 +12,6 @@ module.exports = {
     USERNAME_NOT_EXIST,
     USERNAME_OR_PASSWORD_IS_INCORRENT,
     UNAUTHORIZATION,
-    AUTHORIZATION_IS_NULL
+    AUTHORIZATION_IS_NULL,
+    ACCOUNT_DOES_NOT_MATCH
 }
